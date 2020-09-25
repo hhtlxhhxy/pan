@@ -431,6 +431,8 @@ github.com/tal-tech/xredis v0.0.0-20200806132427-7807ee6297d9 h1:DDqf/qMkdps855z
 github.com/tal-tech/xredis v0.0.0-20200806132427-7807ee6297d9/go.mod h1:FbRs0XZXs6i5CJOV4tY3jtY5XfVKyKUilzd2U0Yp9VU=
 github.com/tal-tech/xtools v0.0.0-20200806122720-d016f6d90e97 h1:qXYhL7nCEnH3i5s72rmstRKvbb2389cUvzxqt5EZ5kY=
 github.com/tal-tech/xtools v0.0.0-20200806122720-d016f6d90e97/go.mod h1:ItloF8dKiM/eIDG+2I1caZP9q4hLJVJ9qoON8VI+s/w=
+github.com/tal-tech/xtools v0.0.0-20200925092432-5d398cc834e0 h1:GVdSVQ8oDzD0zrTzEPiVOs+J8sGxp5RlgoHFwST6Moo=
+github.com/tal-tech/xtools v0.0.0-20200925092432-5d398cc834e0/go.mod h1:ItloF8dKiM/eIDG+2I1caZP9q4hLJVJ9qoON8VI+s/w=
 github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07/go.mod h1:kDXzergiv9cbyO7IOYJZWg1U88JhDg3PB6klq9Hg2pA=
 github.com/tatsushid/go-fastping v0.0.0-20160109021039-d7bb493dee3e/go.mod h1:B4+Kq1u5FlULTjFSM707Q6e/cOHFv0z/6QRoxubDIQ8=
 github.com/tebeka/strftime v0.1.3/go.mod h1:7wJm3dZlpr4l/oVK0t1HYIc4rMzQ2XJlOMIUJUJH6XQ=

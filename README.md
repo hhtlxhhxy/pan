@@ -33,33 +33,18 @@ The framework of Pan is shown as below.
 ```shell
 ./bin/kafka-topics  --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
 ```
-#### 4. Modify config for kafka in Pan
+#### 4. Run
 ```shell
-[KafkaProxy]
-enable=true
-KafkaWaitAll=true
-KafkaCompression=true
-KafkaPartitioner=round
-KafkaProducerTimeout=10
-brokers=localhost:9092
-sasl=false
-user=
-password=
-valid= //topic whitelist，if empty, all topic can be sended
-failMode=retry/save/discard
-
+rigger new proxy kafkaproxy
+cd $GOPATH/src/kafkaproxy
+rigger build
+rigger start
 ```
 
-#### 5. Run
-```shell
-tar -zxvf pan.tar.gz
-cd pan/
-make
-./bin/pan -c ../conf/conf.ini
-```
+至此，我们基于pan生成的kafkaproxy就运行起来了，下面介绍如何在业务代码中发送一条message到proxy，然后由proxy转发给kafka
 
-#### 6. Send Message
-
+#### 5. Send Message
+我们写了一个最简单的发送消息的示例，只有一个main函数，如下
 ```go
 package main
  
@@ -88,8 +73,9 @@ func main() {
     }
 }
 ```
-#### modify conf
+运行这个main，需要单独的配置文件
 ```shell
+;此项配置为业务代码中的配置
 [KafkaProxy]
 unix=/home/www/pan/pan.sock   //sock in pan
 host=localhost:9999  //ip and post pan listen
@@ -97,6 +83,8 @@ host=localhost:9999  //ip and post pan listen
 
 #### warn
 replace in go.mod
+
+此处gomod指的是业务项目中的gomod
 ```shell
 replace github.com/henrylee2cn/teleport v5.0.0+incompatible => github.com/hhtlxhhxy/github.com_henrylee2cn_teleport v1.0.0
 
